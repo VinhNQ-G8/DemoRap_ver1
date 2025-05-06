@@ -10,7 +10,7 @@ define root view entity ZC_CLASS_01 as projection on ZR_CLASS_01
     @Search.defaultSearchElement: true
     class_name,
     
-    @Consumption.valueHelpDefinition: [{ entity: { name: 'ZC_TEACHER_01', element: 'teacher_id' } }]
+    @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_TEACHER_01', element: 'teacher_id' } }]
     teacher_id,
     
     @Semantics.quantity.unitOfMeasure: 'UNIT'
@@ -30,5 +30,5 @@ define root view entity ZC_CLASS_01 as projection on ZR_CLASS_01
     
     /* Associations */
     _Students: redirected to composition child ZC_STUDENT_01,
-    _Teacher: redirected to ZC_TEACHER_01
+    _Teacher: association to ZI_TEACHER_01 on $projection.teacher_id = _Teacher.teacher_id
 } 

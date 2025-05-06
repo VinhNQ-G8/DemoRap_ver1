@@ -30,5 +30,5 @@ define root view entity ZC_CLASS_01 as projection on ZR_CLASS_01
     
     /* Associations */
     _Students: redirected to composition child ZC_STUDENT_01,
-    _Teacher: association to ZI_TEACHER_01 on $projection.teacher_id = _Teacher.teacher_id
+    _Teacher
 } 

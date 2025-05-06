@@ -13,7 +13,10 @@ define view entity ZC_TEACHER_01 as projection on ZI_TEACHER_01
     @Consumption.filter.selectionType: #INTERVAL
     birthdate,
     
-    hometown,
+    phone,
+    
+    @Consumption.valueHelpDefinition: [{ entity: { name: 'ZC_CLASS_01', element: 'class_id' } }]
+    class_id,
     
     // Administrative Data
     @Semantics.user.createdBy: true

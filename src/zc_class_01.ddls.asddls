@@ -14,7 +14,7 @@ define root view entity ZC_CLASS_01
       
       /* Associations */
       _ClassInfo : redirected to composition child ZC_CLASS_INFO_01,
-      _Teacher : redirected to view ZI_TEACHER_01,
+      _Teacher,
       
       /* Administrative fields */
       local_created_by,

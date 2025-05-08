@@ -28,5 +28,5 @@ define view entity ZC_CLASS_INFO_01
   
   /* Associations */
   _Class : redirected to parent ZC_CLASS_01,
-  _Student : redirected to ZC_STUDENT_01
+  _Student  // Association thông thường
 } 

@@ -10,6 +10,12 @@ total etag local_last_changed_at
 etag master last_changed_at
 authorization master ( instance )
 {
+  // Draft actions
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  // Basic operations
   create;
   update;
   delete;

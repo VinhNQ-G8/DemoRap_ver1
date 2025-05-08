@@ -12,6 +12,7 @@ authorization master ( instance )
 {
   // Draft actions
   draft action Edit;
+  draft action Activate;
   draft action Resume;
   draft determine action Prepare;
 
@@ -25,6 +26,7 @@ authorization master ( instance )
   association _Teacher;
   
   // Fields
+  field ( readonly ) class_id;
   field ( readonly ) student_count;
   field ( mandatory ) class_name;
   
@@ -53,7 +55,7 @@ authorization dependent by _Class
   delete;
   
   // Fields
-  field ( readonly ) class_id, student_id;
+  field ( readonly ) class_id, student_id, sequence_no;
   field ( mandatory ) sequence_no;
   
   // Validations

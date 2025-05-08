@@ -25,6 +25,7 @@ authorization master ( instance )
   // Associations
   association _ClassInfo { create; with draft; }
   association _Teacher;
+  association _Student;
   
   // Fields
   field ( readonly ) class_id;
@@ -56,7 +57,7 @@ authorization dependent by _Class
   delete;
   
   // Fields
-  field ( readonly ) class_id, student_id, sequence_no;
+  field ( readonly ) class_id, student_id;
   field ( mandatory ) sequence_no;
   
   // Validations
@@ -67,7 +68,6 @@ authorization dependent by _Class
   
   // Associations
   association _Class { with draft; }
-  association _Student;
   
   // Draft fields
   field ( readonly ) local_created_by, local_created_at, local_last_changed_by, local_last_changed_at, last_changed_at;

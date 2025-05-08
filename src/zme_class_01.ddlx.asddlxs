@@ -1,4 +1,4 @@
-@Metadata.layer: #CORE
+@Metadata.layer: #CUSTOMER
 annotate entity ZC_CLASS_01 with
 {
   @UI.facet: [

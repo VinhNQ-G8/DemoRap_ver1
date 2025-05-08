@@ -1,0 +1,61 @@
+managed implementation in class zbp_r_class_01 unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZR_CLASS_01 alias Class
+persistent table zclass_01
+draft table zclass_01d
+lock master
+authorization master ( instance )
+etag master last_changed_at
+{
+  create;
+  update;
+  delete;
+  
+  // Associations
+  association _ClassInfo { create; with draft; }
+  association _Teacher;
+  
+  // Fields
+  field ( readonly ) student_count;
+  field ( mandatory ) class_name;
+  
+  // Actions
+  action assignTeacher;
+  action removeTeacher;
+  
+  // Validations
+  validation validateTeacher on save { field teacher_id; create; update; }
+  validation validateClassName on save { field class_name; create; update; }
+  
+  // Determinations
+  determination calculateStudentCount on modify { field student_count; }
+  
+  // Draft fields
+  field ( readonly ) local_created_by, local_created_at, local_last_changed_by, local_last_changed_at, last_changed_at;
+}
+
+define behavior for ZI_STUDENT_01 alias Student
+persistent table zstudent_01
+draft table zstudent_01d
+lock dependent by _Class
+authorization dependent by _Class
+{
+  update;
+  delete;
+  
+  // Associations
+  association _Class { with draft; }
+  
+  // Fields
+  field ( readonly ) student_id;
+  field ( mandatory ) name, birthdate;
+  
+  // Validations
+  validation validateStudent on save { field class_id; }
+  validation validateMandatory on save { field name, birthdate; }
+  
+  // Draft fields
+  field ( readonly ) local_created_by, local_created_at, local_last_changed_by, local_last_changed_at, last_changed_at;
+} 

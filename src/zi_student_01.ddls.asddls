@@ -3,7 +3,6 @@
 
 define view entity ZI_STUDENT_01
   as select from zstudent_01
-  association to parent ZI_CLASS_INFO_01 as _ClassInfo on $projection.student_id = _ClassInfo.student_id
 {
   key student_id,
       name,
@@ -20,8 +19,5 @@ define view entity ZI_STUDENT_01
       @Semantics.systemDateTime.lastChangedAt: true
       local_last_changed_at,
       @Semantics.systemDateTime.localInstanceLastChangedAt: true
-      last_changed_at,
-      
-      /* Associations */
-      _ClassInfo
+      last_changed_at
 } 

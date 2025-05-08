@@ -9,14 +9,13 @@ use etag
   use update;
   use delete;
 
-  use association _Students { create; with draft; }
-  use association _Teacher { with draft; }
+  use association _ClassInfo { create; with draft; }
 
   use action assignTeacher;
   use action removeTeacher;
 }
 
-define behavior for ZC_STUDENT_01 alias Student
+define behavior for ZC_CLASS_INFO_01 alias ClassInfo
 use etag
 {
   use update;

@@ -22,10 +22,8 @@ authorization master ( instance )
   update;
   delete;
   
-  // Associations
+  // Associations - Chỉ giữ lại composition
   association _ClassInfo { create; with draft; }
-  association _Teacher;
-  association _Student;
   
   // Fields
   field ( readonly ) class_id;

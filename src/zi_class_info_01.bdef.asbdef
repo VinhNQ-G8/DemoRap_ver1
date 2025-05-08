@@ -18,5 +18,4 @@ lock dependent by _Class
   determination calculateSequenceNo on modify { field student_id; }
 
   association _Class { with draft; }
-  association _Student;
 } 

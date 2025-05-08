@@ -5,29 +5,45 @@ annotate entity ZC_CLASS_INFO_01 with
     { id:            'ClassInfo',
       purpose:       #STANDARD,
       type:          #IDENTIFICATION_REFERENCE,
-      label:         'Thông tin học sinh trong lớp',
+      label:         'Thông tin học sinh',
       position:      10 }
   ]
 
-  @UI: {
-    lineItem:       [{ position: 10, label: 'Mã lớp' }],
-    identification: [{ position: 10, label: 'Mã lớp' }],
-    selectionField: [{ position: 10 }]
-  }
-  @UI.textArrangement: #TEXT_ONLY
+  @UI: { lineItem:       [{ position: 10 }],
+         identification: [{ position: 10 }] }
+  @UI.selectionField: [{ position: 10 }]
   class_id;
 
-  @UI: {
-    lineItem:       [{ position: 20, label: 'Mã học sinh' }],
-    identification: [{ position: 20, label: 'Mã học sinh' }],
-    selectionField: [{ position: 20 }]
-  }
-  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_STUDENT_01', element: 'student_id' } }]
+  @UI: { lineItem:       [{ position: 20 }],
+         identification: [{ position: 20 }] }
+  @UI.selectionField: [{ position: 20 }]
   student_id;
 
-  @UI: {
-    lineItem:       [{ position: 30, label: 'Số thứ tự' }],
-    identification: [{ position: 30, label: 'Số thứ tự' }]
-  }
-  sequence_no;
+  @UI: { lineItem:       [{ position: 30 }],
+         identification: [{ position: 30 }] }
+  @UI.selectionField: [{ position: 30 }]
+  name;
+
+  @UI: { lineItem:       [{ position: 40 }],
+         identification: [{ position: 40 }] }
+  birthdate;
+
+  @UI: { lineItem:       [{ position: 50 }],
+         identification: [{ position: 50 }] }
+  hometown;
+
+  @UI.hidden: true
+  local_created_by;
+
+  @UI.hidden: true
+  local_created_at;
+
+  @UI.hidden: true
+  local_last_changed_by;
+
+  @UI.hidden: true
+  local_last_changed_at;
+
+  @UI.hidden: true
+  last_changed_at;
 } 

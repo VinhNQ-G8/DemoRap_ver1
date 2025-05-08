@@ -15,25 +15,37 @@ annotate entity ZC_CLASS_01 with
       targetElement: '_ClassInfo'}
   ]
 
-  @UI: {
-    lineItem:       [{ position: 10, label: 'Mã lớp' }],
-    identification: [{ position: 10, label: 'Mã lớp' }],
-    selectionField: [{ position: 10 }]
-  }
-  @UI.textArrangement: #TEXT_ONLY
+  @UI: { lineItem:       [{ position: 10 }],
+         identification: [{ position: 10 }] }
+  @UI.selectionField: [{ position: 10 }]
   class_id;
 
-  @UI: {
-    lineItem:       [{ position: 20, label: 'Tên lớp' }],
-    identification: [{ position: 20, label: 'Tên lớp' }],
-    selectionField: [{ position: 20 }]
-  }
+  @UI: { lineItem:       [{ position: 20 }],
+         identification: [{ position: 20 }] }
+  @UI.selectionField: [{ position: 20 }]
   class_name;
 
-  @UI: {
-    lineItem:       [{ position: 30, label: 'Giáo viên' }],
-    identification: [{ position: 30, label: 'Giáo viên' }],
-    selectionField: [{ position: 30 }]
-  }
+  @UI: { lineItem:       [{ position: 30 }],
+         identification: [{ position: 30 }] }
+  @UI.selectionField: [{ position: 30 }]
   teacher_id;
+
+  @UI: { lineItem:       [{ position: 40 }],
+         identification: [{ position: 40 }] }
+  student_count;
+
+  @UI.hidden: true
+  local_created_by;
+
+  @UI.hidden: true
+  local_created_at;
+
+  @UI.hidden: true
+  local_last_changed_by;
+
+  @UI.hidden: true
+  local_last_changed_at;
+
+  @UI.hidden: true
+  last_changed_at;
 } 

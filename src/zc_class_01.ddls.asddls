@@ -2,8 +2,19 @@
 @AccessControl.authorizationCheck: #CHECK
 @Metadata.allowExtensions: true
 @Search.searchable: true
+@ObjectModel.semanticKey: ['class_id']
+@ObjectModel.transactionalProcessingEnabled: true
+@ObjectModel.usageType:{
+    serviceQuality: #X,
+    sizeCategory: #S,
+    dataClass: #MIXED
+}
+
+@VDM.viewType: #CONSUMPTION
+@VDM.lifecycle.contract.type: #PUBLIC_LOCAL_API
 
 define root view entity ZC_CLASS_01
+  provider contract transactional_query
   as projection on ZR_CLASS_01
 {
   key class_id,

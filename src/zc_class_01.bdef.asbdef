@@ -9,6 +9,13 @@ use etag
   use update;
   use delete;
 
+  // Draft actions
+  draft action Edit;
+  draft action Activate;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
   use association _ClassInfo { create; with draft; }
 
   use action assignTeacher;

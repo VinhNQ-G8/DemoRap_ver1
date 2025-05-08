@@ -1,0 +1,7 @@
+@EndUserText.label: 'Service Definition cho Class'
+define service ZSD_CLASS_01 {
+  expose ZC_CLASS_01 as Class;
+  expose ZC_CLASS_INFO_01 as ClassInfo;
+  expose ZI_STUDENT_01 as Student;
+  expose ZI_TEACHER_01 as Teacher;
+} 

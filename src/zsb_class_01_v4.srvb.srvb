@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Binding cho Class'
+define service ZSB_CLASS_01_V4 {
+  bind service ZSD_CLASS_01 as CLASS;
+} 

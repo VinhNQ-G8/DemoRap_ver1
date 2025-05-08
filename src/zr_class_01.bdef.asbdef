@@ -41,8 +41,6 @@ define behavior for ZI_CLASS_INFO_01 alias ClassInfo
 persistent table zclass_info_01
 draft table zclass_info_01d
 lock dependent by _Class
-total etag local_last_changed_at
-etag master last_changed_at
 authorization dependent by _Class
 {
   update;
